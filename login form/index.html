@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>recruitment</title>
+        <link rel="stylesheet" href="style.css">
+       <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+    </head>
+    <body>
+        <div class="wlc" style="background-image: url(img/40678024_10156217312330589_3015222519608115200_o.jpg)"></div>
+        <div class="rec">
+            <form action="#" method="post" onsubmit="return validation()">
+                <h1> Member's recruitment</h1>
+                <div class="part">
+                    <label for="fn" class="nm">Full Name :</label>
+						<input class="inpt" id="fn"type="text" name="name" placeholder="Your Name...">
+				</div>                
+                <div class="part">
+                    <label for="em" class="nm">Email:</label>
+						<input class="inpt" id="em" type="email" name="email" placeholder="example@gmail.com.">
+				</div>
+                <div class="part">
+                    <label for="mob" class="nm">mobile phone</label>
+						<input class="inpt" id="mob"type="text" name="mob" placeholder="mobile..">
+				</div>
+                <div class="part">
+                    <label for="un" class="nm">University:</label>
+						<input class="inpt" id="un"type="text" name="uni." placeholder="university..">
+				</div>                
+                               
+                <div class="part">
+                    <label for="ac" class="nm">Acadmic Year:</label>
+                    <select class="inpt" id="ac" name="ac" >
+                        <option>select acadmic year</option>
+                        <option>level 1</option>
+                        <option>level 2</option>
+                        <option>level 3</option>
+                        <option>level 4</option>
+                        <option>level 5</option>
+                    </select>
+				</div>                
+                <div class="part">
+                    <label for="px" class="nm">Yourprevious experience:</label>
+                    <textarea class="inpt" id="px" name="px" rows="1" cols="16" placeholder=""></textarea>
+				</div>                
+                <div class="part">
+                    <label for="ft" class="nm">First preference</label>
+                    <select class="inpt" id="ft" name="ft" >
+                        <option>select first preference</option>
+                        <option>IT</option>
+                        <option>Junior</option>
+                        <option>marketing</option>
+                        <option>Acadmic</option>
+                        <option>Media</option>
+                    </select>
+                </div>
+                <div class="part">
+                    <label for="sec" class="nm">secound preference</label>
+                    <select class="inpt" id="sec" name="sec" >
+                        <option>select secounf preference</option>
+                        <option>It</option>
+                        <option>Media</option>
+                        <option>DCR</option>
+                        <option>logistics</option>
+                        <option>marketing</option>
+                    </select>
+                </div>
+                <input type="submit" class="submit">
+                <div id="err"></div>
+            </form>    
+        </div>
+      <!-- script tag-->
+        <script type="text/javascript">
+            function validation(){
+                var name = document.getElementById('fn').value;
+                var email = document.getElementById('em').value;
+                var mobile = document.getElementById('mob').value;
+                var uni = document.getElementById('un').value;
+                var acadmic = document.getElementById('ac').value;
+                var pre = document.getElementById('px').value;
+                var fp = document.getElementById('ft').value;
+                var sp = document.getElementById('sec').value;
+                if ( name==''|| email==''|| mobile==''|| uni==''|| acadmic==''|| pre==''|| fp==''|| sp==''){
+                    document.getElementById("err").innerHTML="All field required";
+                    return false;
+                }
+                else if( name.length<10){
+                    document.getElementById("err").innerHTML="name must be at least 10 characters";
+                    return false;
+                }
+                else if( mobile.length<11||mobile.length>11){
+                    document.getElementById("err").innerHTML="mobile number must be 11 number ";
+                    return false;
+                }
+                else{
+                    return true;
+                }
+            }
+        </script>
+    </body>
+</html>
